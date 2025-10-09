@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ToDo+ — Lista de Tarefas</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a class="brand" href="#">ToDo+</a>
+            <div id="user-greeting" class="subtitle hidden"></div>
+        </div>
+        <div class="header-right">
+            <button id="btn-logout" class="btn btn-outline hidden">Sair</button>
+        </div>
+    </header>
+
+    <main class="main">
+        <section id="auth" class="auth-section">
+            <div class="card auth-card">
+                <h2>ToDo+</h2>
+                <p class="lead">Faça login para gerenciar suas tarefas</p>
+
+                <form id="login-form" class="form">
+                    <label>Usuário</label>
+                    <input id="login-email" type="email" placeholder="Digite seu usuário" required />
+                    <label>Senha</label>
+                    <input id="login-password" type="password" placeholder="Digite sua senha" required />
+                    <button type="submit" class="btn primary full">Entrar</button>
+                </form>
+
+                <div class="or">ou</div>
+
+                <h3>Registrar</h3>
+                <form id="register-form" class="form">
+                    <label>Nome</label>
+                    <input id="reg-name" type="text" placeholder="Digite seu nome completo" required />
+                    <label>E-mail</label>
+                    <input id="reg-email" type="email" placeholder="Digite seu e-mail" required />
+                    <label>Senha</label>
+                    <input id="reg-password" type="password" placeholder="Digite sua senha" required />
+                    <button type="submit" class="btn secondary full">Criar conta</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="app" class="app-section hidden">
+            <div class="container">
+                <div class="toolbar">
+                    <div>
+                        <button id="btn-new-task" class="btn primary fab">+ Nova Tarefa</button>
+                    </div>
+                    <div class="tabs">
+                        <button id="tab-pending" class="tab active">Pendentes <span id="count-pending"
+                                class="badge">0</span></button>
+                        <button id="tab-completed" class="tab">Concluídas <span id="count-completed"
+                                class="badge">0</span></button>
+                    </div>
+                </div>
+
+                <div class="card list-card">
+                    <h3 id="list-title">Tarefas Pendentes</h3>
+                    <div id="empty-placeholder" class="empty">
+                        <div class="empty-ico">⏱️</div>
+                        <div class="empty-text">Nenhuma tarefa pendente! Que tal criar uma nova tarefa?</div>
+                    </div>
+                    <ul id="pending-list" class="task-list"></ul>
+                    <ul id="completed-list" class="task-list hidden"></ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="task-modal" class="modal" aria-hidden="true">
+        <div class="modal-box card" role="dialog" aria-modal="true">
+            <button id="modal-back" class="back">← Voltar</button>
+            <h3 id="modal-title">Nova Tarefa</h3>
+            <form id="task-form" class="form">
+                <label>Título*</label>
+                <input id="task-title" type="text" placeholder="Digite o título da tarefa" required />
+                <label>Descrição</label>
+                <textarea id="task-desc" placeholder="Digite uma descrição opcional"></textarea>
+                <label>Prioridade</label>
+                <select id="task-priority">
+                    <option value="Baixa">Baixa</option>
+                    <option value="Média" selected>Média</option>
+                    <option value="Alta">Alta</option>
+                </select>
+                <div class="form-actions">
+                    <button type="submit" class="btn primary full" id="save-task">Criar Tarefa</button>
+                    <button type="button" class="btn secondary" id="task-cancel">Cancelar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <footer class="footer">ToDo+ — Aplicação (LocalStorage) — Mackenzie 2025</footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
