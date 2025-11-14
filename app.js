@@ -353,3 +353,6 @@ document.addEventListener('DOMContentLoaded', () => {
         DOM.appSection.classList.add('hidden');
     }
 });
+
+
+// Modificação para iteracao2
