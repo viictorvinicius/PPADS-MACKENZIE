@@ -3,4 +3,4 @@
 # Link do Projeto: https://todo-plus-ads.vercel.app/
 
 
-Atualização para exercício da Iteração 2 — [Victor]
+Atualização para exercício da Iteração 2
